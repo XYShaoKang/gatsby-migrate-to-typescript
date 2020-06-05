@@ -30,7 +30,8 @@ interface PageQuery {
 }
 
 const Home: FC<PageQuery> = ({ data }) => {
-  const node = data.allMarkdownRemark.edges[0].node
+  const node =
+    data.allMarkdownRemark.edges[0].node
 
   const title = node.frontmatter?.title
   const excerpt = node.excerpt

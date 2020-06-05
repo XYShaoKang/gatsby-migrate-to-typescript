@@ -1,12 +1,18 @@
 module.exports = {
-  parser: `babel-eslint`,
+  parser: `@typescript-eslint/parser`,
   extends: [
     `google`,
     `eslint:recommended`,
+    `plugin:@typescript-eslint/recommended`,
     `plugin:react/recommended`,
+    `prettier/@typescript-eslint`,
     `plugin:prettier/recommended`,
   ],
-  plugins: [`react`, `filenames`],
+  plugins: [
+    `@typescript-eslint`,
+    `react`,
+    `filenames`,
+  ],
   parserOptions: {
     ecmaVersion: 2016,
     sourceType: `module`,
