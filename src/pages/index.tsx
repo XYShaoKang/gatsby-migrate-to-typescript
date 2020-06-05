@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import { HomeQuery } from './__generated__/HomeQuery'
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -15,18 +16,7 @@ const Content = styled.div`
 `
 
 interface PageQuery {
-  data: {
-    allMarkdownRemark: {
-      edges: Array<{
-        node: {
-          frontmatter: {
-            title: string
-          }
-          excerpt: string
-        }
-      }>
-    }
-  }
+  data: HomeQuery
 }
 
 const Home: FC<PageQuery> = ({ data }) => {
@@ -47,7 +37,7 @@ const Home: FC<PageQuery> = ({ data }) => {
 export default Home
 
 export const query = graphql`
-  query {
+  query HomeQuery {
     allMarkdownRemark {
       edges {
         node {
