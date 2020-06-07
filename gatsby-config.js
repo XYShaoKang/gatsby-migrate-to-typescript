@@ -23,7 +23,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-codegen`,
-      options: {},
+      options: {
+        watch: true,
+      },
     },
   ],
 }
